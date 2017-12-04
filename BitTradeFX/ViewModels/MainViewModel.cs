@@ -8,8 +8,7 @@ namespace BitTradeFX.ViewModels {
     using System.ComponentModel;
     using BitTradeFX.Models;
 
-    public class MainViewModel : INotifyPropertyChanged
-    {
+    public class MainViewModel : INotifyPropertyChanged {
         #region INotifyPropertyChanged member
         public event PropertyChangedEventHandler PropertyChanged;
         #endregion INotifyPropertyChanged member

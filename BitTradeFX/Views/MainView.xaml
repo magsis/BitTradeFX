@@ -5,8 +5,122 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BitTradeFX.Views"
         mc:Ignorable="d"
-        Title="MainView" Height="300" Width="300">
-    <Grid>
-        
-    </Grid>
+        Background="LightGray"
+        Title="BitTradeFX" Height="775" Width="800">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="80,20,0,0" >
+            <RadioButton Content="0.001" Margin="20,0,0,0" FontSize="15"/>
+            <RadioButton Content="0.005" Margin="20,0,0,0" FontSize="15"/>
+            <RadioButton Content=" 0.01" Margin="20,0,0,0" FontSize="15"/>
+            <RadioButton Content=" 0.05" Margin="20,0,0,0" FontSize="15"/>
+            <RadioButton Content=" 0.1" Margin="20,0,0,0" FontSize="15"/>
+            <RadioButton Content=" 0.5" Margin="20,0,0,0" FontSize="15"/>
+            <RadioButton Content=" 1.0" Margin="20,0,0,0" FontSize="15"/>
+            <RadioButton Content=" 5.0" Margin="20,0,0,0" FontSize="15"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20,10,0,20">
+            <TextBlock Text="Amount  " Margin="20,0,0,0" FontSize="20"/>
+            <TextBox Text="" Width="220" FontSize="20" Margin="20,0,0,0"/>
+            <Button Content="+" Width="50" Margin="20,0,0,0" FontSize="20" FontWeight="ExtraBold" Background="LightBlue" VerticalAlignment="Center"/>
+            <Button Content="-" Width="50" Margin="20,0,0,0" FontSize="20" FontWeight="ExtraBold" Background="LightBlue" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Line Stroke="Gray" StrokeThickness="2" X1="20" X2="800" Y1="0" Y2="0"/>
+        <StackPanel Orientation="Horizontal" Margin="80,20,0,0" >
+            <RadioButton Content="100" Margin="20,0,0,0" FontSize="15"/>
+            <RadioButton Content="500" Margin="20,0,0,0" FontSize="15"/>
+            <RadioButton Content="1.0k" Margin="20,0,0,0" FontSize="15"/>
+            <RadioButton Content="5.0k" Margin="20,0,0,0" FontSize="15"/>
+            <RadioButton Content="10.0k" Margin="20,0,0,0" FontSize="15"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20,10,0,20">
+            <TextBlock Text="Price(JPY)" Margin="20,0,0,0" FontSize="20"/>
+            <TextBox Text="" Width="220"  FontSize="20" Margin="20,0,0,0"/>
+            <Button Content="+" Width="50" Margin="20,0,0,0" FontSize="20" FontWeight="ExtraBold" Background="LightBlue" VerticalAlignment="Center"/>
+            <Button Content="-" Width="50" Margin="20,0,0,0" FontSize="20" FontWeight="ExtraBold" Background="LightBlue" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Line Stroke="Gray" StrokeThickness="2" X1="20" X2="800" Y1="0" Y2="0"/>
+        <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+            <TextBlock Text="Total(JPY) : " Margin="20,0,0,0" FontSize="15"/>
+            <TextBlock Text="{Binding}" Margin="40,0,0,0" FontSize="15"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20,10,0,20">
+            <Button Content="SELL" Height="50" Width="300" Margin="20,0,0,0" FontSize="35" FontWeight="ExtraBold" Background="OrangeRed"/>
+            <Button Content="BUY" Height="50" Width="300" Margin="20,0,0,0" FontSize="35" FontWeight="ExtraBold" Background="GreenYellow"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20,50,0,0">
+            <Button Content="Cancel All" Height="30" Width="150" Margin="0,0,0,0" FontSize="18" FontWeight="ExtraBold" Background="Purple" Foreground="White"/>
+        </StackPanel>
+        <DataGrid Height="300" ItemsSource="{Binding}" Margin="10,10,10,10" HorizontalContentAlignment="Center">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="50" Header="Cancel">
+                    
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Width="100" Header="Date" Binding="{Binding}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="100" Header="Pare" Binding="{Binding}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="80" Header="Order Type" Binding="{Binding}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="55" Header="Sell/Buy" Binding="{Binding}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="120" Header="Total Amount" Binding="{Binding}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="120" Header="Residual Quantity" Binding="{Binding}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="120" Header="Price(JPY)" Binding="{Binding}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StatusBar HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <StatusBarItem>
+                <TextBlock Text="{Binding}" Width="600" FontSize="15"/>
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem>
+                <TextBlock Text="{Binding}" Width="200" FontSize="15"/>
+            </StatusBarItem>
+        </StatusBar>
+    </StackPanel>
 </Window>
